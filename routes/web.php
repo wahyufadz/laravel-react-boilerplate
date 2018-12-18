@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route for React SPA
+Route::any('{all}', function () {
+  return view('main');
+})
+->where(['all' => '.*']);

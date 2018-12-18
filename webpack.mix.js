@@ -12,4 +12,13 @@ const mix = require('laravel-mix');
  */
 
 mix.react('resources/js/app.js', 'public/js')
-   .sass('resources/sass/app.scss', 'public/css');
+   .sass('resources/sass/app.scss', 'public/css')
+   
+   //laravel mix hot server with `npm run watch`
+   .browserSync({
+     proxy:'127.0.0.1:8000',
+     notify: false
+    })
+   
+   //disable notifications after save file
+   .disableNotifications();
